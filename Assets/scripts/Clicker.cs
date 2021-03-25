@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using System;
 public class Clicker : MonoBehaviour
 {
     public static Clicker Instance;
@@ -37,11 +37,28 @@ public class Clicker : MonoBehaviour
         };
         for (int i = 0 ; i < ampPrefs.Count;i++)
             ampPrefs[i].setAmp(amps[i]);
-
+        offline();
         StartCoroutine(PassiveTap());
         UpdateUI();
     }
-
+    private void OnApplicationQuit() {
+        PlayerPrefs.SetString("LastQuit",DateTime.UtcNow.ToString());
+    }
+    private void offline()
+    {
+        string LastQuitCheck =PlayerPrefs.GetString("LastQuit",null);
+        if(LastQuitCheck == null){
+            Debug.Log("ПЕРВЫЙ ЗАПУСК");
+            return;
+            
+            }
+        var LastQuit = DateTime.Parse(PlayerPrefs.GetString("LastQuit"));
+        double secondsSpan = (DateTime.UtcNow - LastQuit).TotalSeconds;
+        float totalPower = (float)(secondsSpan) * GetPassivePower();
+        
+        TapTarget(totalPower);
+        Debug.Log($"Братишка, ты пока в офлайне был тебе накапало - {totalPower}");
+    }
     private IEnumerator PassiveTap()
     {
 
