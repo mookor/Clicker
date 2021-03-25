@@ -29,9 +29,9 @@ public class Clicker : MonoBehaviour
         
         amps = new List<PowerAmp>()
         {
-            new PowerAmp(PowerAmp.AmpType.ADD_POWER,0,false,1,1.5f,100),
-            new PowerAmp(PowerAmp.AmpType.BOOST_TAP,100,false,2,2f,200,20),
-            new PowerAmp(PowerAmp.AmpType.PASSIVE_DAMAGE,0,true,1,1.25f,125)
+            new PowerAmp(PowerAmp.AmpType.ADD_POWER,0,false,1,2f,100,2.5f),
+            new PowerAmp(PowerAmp.AmpType.BOOST_TAP,100,false,2,2f,200,2.0f),
+            new PowerAmp(PowerAmp.AmpType.PASSIVE_DAMAGE,0,true,1,1.25f,10,1.3f)
 
 
         };

@@ -8,7 +8,8 @@ public class AmpPref : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private TextMeshProUGUI level;
     private PowerAmp amp;
-
+    [SerializeField]
+    private TextMeshProUGUI price;
     
 
     public void setAmp(PowerAmp amp)
@@ -20,6 +21,7 @@ public class AmpPref : MonoBehaviour, IPointerClickHandler
     private void UpdateUI()
     {
         level.text = "X" + amp.Level;
+        price.text = "$" + amp.Price;
     }
 
     public void OnPointerClick(PointerEventData eventData)
