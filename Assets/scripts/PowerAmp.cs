@@ -16,7 +16,7 @@ public class PowerAmp
 
     public bool IsPassive {get;private set;}
 
-    public float Value => InitValue + IncPerLevel* Mathf.Clamp(Level -1 ,0 , int.MaxValue);
+    public float Value => InitValue * (float)(Math.Pow(IncPerLevel,Level));
     public float InitValue {get;private set;}
 
     public float IncPerLevel {get;private set;}
@@ -50,8 +50,9 @@ public class PowerAmp
         switch(Type)
         {
             case AmpType.ADD_POWER:
+            return initPower*Value;
             case AmpType.PASSIVE_DAMAGE:
-                return initPower + Value;
+                return initPower +Value;
 
             case AmpType.BOOST_TAP:
                 if (UnityEngine.Random.Range(0,100) < Chance)

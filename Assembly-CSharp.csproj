@@ -38,8 +38,9 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\Clicker.cs" />
      <Compile Include="Assets\scripts\TapTarget.cs" />
-     <Compile Include="Assets\scripts\PowerAmp.cs" />
      <Compile Include="Assets\scripts\AmpPref.cs" />
+     <Compile Include="Assets\scripts\PowerAmp.cs" />
+     <Compile Include="Assets\scripts\ppfkill.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

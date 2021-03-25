@@ -29,9 +29,10 @@ public class Clicker : MonoBehaviour
         
         amps = new List<PowerAmp>()
         {
-            new PowerAmp(PowerAmp.AmpType.ADD_POWER,0,false,1,2f,100,2.5f),
-            new PowerAmp(PowerAmp.AmpType.BOOST_TAP,100,false,2,2f,200,2.0f),
-            new PowerAmp(PowerAmp.AmpType.PASSIVE_DAMAGE,0,true,1,1.25f,10,1.3f)
+            new PowerAmp(type : PowerAmp.AmpType.ADD_POWER, priority: 0, isPassive: false,value: 1,incr: 2f,initPrice:100,priceIncrease:2.5f),
+            new PowerAmp(type : PowerAmp.AmpType.BOOST_TAP, priority: 100, isPassive: false,value: 2,incr: 2f,initPrice:200,priceIncrease:2.5f),
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 1,incr: 1.3f,initPrice:10,priceIncrease:1.3f),
+            
 
 
         };
@@ -47,12 +48,13 @@ public class Clicker : MonoBehaviour
     private void offline()
     {
         string LastQuitCheck =PlayerPrefs.GetString("LastQuit",null);
-        if(LastQuitCheck == null){
+        Debug.Log(LastQuitCheck);
+        if(LastQuitCheck.Length == 0){
             Debug.Log("ПЕРВЫЙ ЗАПУСК");
             return;
             
             }
-        var LastQuit = DateTime.Parse(PlayerPrefs.GetString("LastQuit"));
+        var LastQuit = DateTime.Parse(LastQuitCheck);
         double secondsSpan = (DateTime.UtcNow - LastQuit).TotalSeconds;
         float totalPower = (float)(secondsSpan) * GetPassivePower();
         
@@ -84,6 +86,7 @@ public class Clicker : MonoBehaviour
 
         foreach( var amp in sort_amps)
             power = amp.CalcPow(power);
+            Debug.Log(power);
         return power;
     }
 
@@ -94,6 +97,7 @@ public class Clicker : MonoBehaviour
 
         foreach( var amp in sort_amps)
             power = amp.CalcPow(power);
+        Debug.Log($"pps {power}");
         return power;
     }
     public void UpdateUI()
