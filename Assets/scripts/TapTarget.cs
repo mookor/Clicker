@@ -14,10 +14,11 @@ public class TapTarget : MonoBehaviour
     
     private void OnMouseDown() {
         transform.localScale = tapScale;
+        Clicker.Instance.Click();
     }
 
     private void OnMouseUp() {
         transform.localScale = normalScale;
-        Clicker.Instance.Click();
+        
     }
 }
