@@ -31,9 +31,7 @@ public class Clicker : MonoBehaviour
         {
             new PowerAmp(type : PowerAmp.AmpType.ADD_POWER, priority: 0, isPassive: false,value: 1,incr: 2f,initPrice:100,priceIncrease:2.5f),
             new PowerAmp(type : PowerAmp.AmpType.BOOST_TAP, priority: 100, isPassive: false,value: 2,incr: 2f,initPrice:200,priceIncrease:2.5f),
-            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 1,incr: 1.3f,initPrice:10,priceIncrease:1.3f),
-            
-
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 1,incr: 0.5f,initPrice:10,priceIncrease:1.2f),
 
         };
         for (int i = 0 ; i < ampPrefs.Count;i++)
