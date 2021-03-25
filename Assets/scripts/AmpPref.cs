@@ -11,17 +11,21 @@ public class AmpPref : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private TextMeshProUGUI price;
     
+    private CanvasGroup group;
 
     public void setAmp(PowerAmp amp)
     {
+        group = GetComponent<CanvasGroup>();
         this.amp = amp;
         UpdateUI();
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         level.text = "X" + amp.Level;
         price.text = "$" + amp.Price;
+
+        group.alpha = Clicker.Instance.Money >= amp.Price ? 1 : .5f;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -31,7 +35,7 @@ public class AmpPref : MonoBehaviour, IPointerClickHandler
             
             return;
         
-        Clicker.Instance.Money -= amp.Price;
+        Clicker.Instance.AddMoney(-amp.Price);
         amp.LevelUP();
         UpdateUI();
         Clicker.Instance.UpdateUI();

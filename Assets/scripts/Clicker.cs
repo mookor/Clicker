@@ -10,7 +10,7 @@ public class Clicker : MonoBehaviour
     public float Money
     {
         get => PlayerPrefs.GetFloat("Money",0);
-        set => PlayerPrefs.SetFloat("Money",value);
+        private set => PlayerPrefs.SetFloat("Money",value);
     }
 
     [SerializeField]
@@ -57,8 +57,7 @@ public class Clicker : MonoBehaviour
     }
 
     private void TapTarget(float power){
-        Money += power;
-        UpdateUI();
+        AddMoney(power);
     }
 
     private float GetPower(){
@@ -71,7 +70,7 @@ public class Clicker : MonoBehaviour
         return power;
     }
 
-    private float GetPassivePower(){
+    private float GetPassivePower(){ 
         float power = 0;
         var sort_amps = amps.FindAll(x => x.IsPassive);
         sort_amps.Sort((x,y) => x.Priority.CompareTo(y.Priority));
@@ -85,9 +84,19 @@ public class Clicker : MonoBehaviour
 
         money.text = Money.ToString();
     }
+    
+    public void AddMoney(float Value)
+    {
+        Money += Value;
+        UpdateUI();
+        foreach( var prefab in ampPrefs)
+            prefab.UpdateUI();
+    }
+    
     // Update is called once per frame
     void Update()
     {
         
     }
+
 }

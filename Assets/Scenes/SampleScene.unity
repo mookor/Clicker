@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 56345688}
   - component: {fileID: 56345687}
   - component: {fileID: 56345689}
+  - component: {fileID: 56345690}
   m_Layer: 5
   m_Name: double
   m_TagString: Untagged
@@ -215,6 +216,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 1077742968}
   price: {fileID: 213964062}
+--- !u!225 &56345690
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56345685}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &140192188
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +925,7 @@ GameObject:
   - component: {fileID: 677229726}
   - component: {fileID: 677229725}
   - component: {fileID: 677229727}
+  - component: {fileID: 677229728}
   m_Layer: 5
   m_Name: auto
   m_TagString: Untagged
@@ -992,6 +1006,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 1617963590}
   price: {fileID: 450775568}
+--- !u!225 &677229728
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677229723}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1077742966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1212,7 @@ GameObject:
   - component: {fileID: 1160556010}
   - component: {fileID: 1160556009}
   - component: {fileID: 1160556011}
+  - component: {fileID: 1160556012}
   m_Layer: 5
   m_Name: crit
   m_TagString: Untagged
@@ -1266,6 +1293,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 458872555}
   price: {fileID: 140192190}
+--- !u!225 &1160556012
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160556007}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1400868267
 GameObject:
   m_ObjectHideFlags: 0
