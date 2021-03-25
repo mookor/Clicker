@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class PowerAmp
 {
     public enum AmpType
@@ -20,21 +20,22 @@ public class PowerAmp
     public float InitValue {get;private set;}
 
     public float IncPerLevel {get;private set;}
-
+    public float Price => InitPrice * (float)(Math.Pow(IncreacePricePerLevel,Level));
     public float Level {get;private set;}
 
-    public int Price {get;private set;}
-
+    public int InitPrice {get;private set;}
+    public float IncreacePricePerLevel {get; private set;}
     public int Chance {get;private set;}
 
-    public PowerAmp(AmpType type,int priority, bool isPassive, float value, float incr, int price,int chance = 100)
+    public PowerAmp(AmpType type,int priority, bool isPassive, float value, float incr, int initPrice,float priceIncrease,int chance = 100)
     {
         Type = type;
         Priority = priority;
         IsPassive = isPassive;
         InitValue = value;
         IncPerLevel = incr;
-        Price = price;
+        InitPrice = initPrice;
+        IncreacePricePerLevel = priceIncrease;
         Chance = chance;
 
     }
@@ -51,7 +52,7 @@ public class PowerAmp
                 return initPower + Value;
 
             case AmpType.BOOST_TAP:
-                if (Random.Range(0,100) < Chance)
+                if (UnityEngine.Random.Range(0,100) < Chance)
                     return initPower * Value;
                 else
                     return initPower;
