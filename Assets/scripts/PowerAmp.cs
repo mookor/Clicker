@@ -21,7 +21,7 @@ public class PowerAmp
 
     public float IncPerLevel {get;private set;}
     public float Price => InitPrice * (float)(Math.Pow(IncreacePricePerLevel,Level));
-    public float Level {get;private set;}
+    public int Level {get;private set;}
 
     public int InitPrice {get;private set;}
     public float IncreacePricePerLevel {get; private set;}
@@ -37,6 +37,8 @@ public class PowerAmp
         InitPrice = initPrice;
         IncreacePricePerLevel = priceIncrease;
         Chance = chance;
+
+        Level = PlayerPrefs.GetInt("DA_" + Type.ToString(),0);
 
     }
 
@@ -68,5 +70,6 @@ public class PowerAmp
     {
 
         Level++ ; 
+        PlayerPrefs.SetInt("DA_" + Type.ToString(),Level);
     }
 }
