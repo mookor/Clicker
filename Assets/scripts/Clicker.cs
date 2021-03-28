@@ -33,6 +33,14 @@ public class Clicker : MonoBehaviour
             new PowerAmp(type : PowerAmp.AmpType.BOOST_TAP, priority: 100, isPassive: false,value: 2,incr: 2f,initPrice:200,priceIncrease:2.5f),
             new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 1,incr: 1f,initPrice:10,priceIncrease:1.2f),
 
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 1,incr: 1f,initPrice:15,priceIncrease:1.2f),
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 5,incr: 1f,initPrice:93,priceIncrease:1.24f),
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 16,incr: 1f,initPrice:666,priceIncrease:1.22f),
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 56,incr: 1f,initPrice:5323,priceIncrease:1.25f),
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 135,incr: 1f,initPrice:31290,priceIncrease:1.27f),
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 418,incr: 1f,initPrice:173228,priceIncrease:1.3f),
+            new PowerAmp(type : PowerAmp.AmpType.PASSIVE_DAMAGE, priority: 0, isPassive: true,value: 14275,incr: 1f,initPrice:1385824,priceIncrease:1.28f),
+
         };
         for (int i = 0 ; i < ampPrefs.Count;i++)
             ampPrefs[i].setAmp(amps[i]);
