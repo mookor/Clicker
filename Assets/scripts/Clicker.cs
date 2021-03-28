@@ -84,7 +84,6 @@ public class Clicker : MonoBehaviour
 
         foreach( var amp in sort_amps)
             power = amp.CalcPow(power);
-            Debug.Log(power);
         return power;
     }
 
@@ -95,7 +94,6 @@ public class Clicker : MonoBehaviour
 
         foreach( var amp in sort_amps)
             power = amp.CalcPow(power);
-        Debug.Log($"pps {power}");
         return power;
     }
     public void UpdateUI()

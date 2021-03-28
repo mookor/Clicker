@@ -30,7 +30,6 @@ public class AmpPref : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("qwe");
         if (Clicker.Instance.Money < amp.Price)
             
             return;

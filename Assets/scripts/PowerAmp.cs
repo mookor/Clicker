@@ -55,7 +55,7 @@ public class PowerAmp
             return initPower*Value;
 
             case AmpType.PASSIVE_DAMAGE:
-                return Value;
+                return initPower+Value;
 
             case AmpType.BOOST_TAP:
                 if (UnityEngine.Random.Range(0,100) < Chance)
